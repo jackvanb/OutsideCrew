@@ -1,0 +1,103 @@
+<% include partials/header %>
+<div class = "home">
+<h3 style="text-align: center; font-weight: bold; font-size: 23px;">Choose which artists you want to see.</h3>
+<p style = "text-align: center;">(Once you fill a timeslot, all artists that conflict will be unavailable for selection)</p>
+<div class="container">
+	<div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="form-group">
+                <div class="input-group">
+                  <input type="text" id="search" class="form-control" placeholder="Type to search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" style="background-color: ##ff8855;" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                  </span>
+                </div><!-- /input-group -->
+            </div>
+        </div>
+	</div>
+</div>
+
+<ul class="list-group">
+    <li id="art" style="text-align: center; margin-bottom:5px;" class="list-group-item">My Artists</li>
+
+</ul>
+
+
+    <div id = "postform"></div>
+    <button type="button" class = "btn btn-primary signup2" id = "prepare" onclick="showSubmit()">Prepare Lineup</button>
+    <a href = "/dashboard"><input type="submit" style="display: none;" id = "submitter" class = "btn btn-primary signup2" value="Submit Lineup"></a>
+    <input name = "lineup1" value= "" type = "hidden" id ="postid">
+    <input name = "lineup2" value= "" type = "hidden" id ="postid">
+    <input name = "lineup3" value= "" type = "hidden" id ="postid">
+    <input name = "lineup4" value= "" type = "hidden" id ="postid">
+    <input name = "lineup5" value= "" type = "hidden" id ="postid">
+
+
+<table id="table">
+        <% artists.forEach(function(artists){ %>
+        <tr>
+            <td>
+                <button onclick='addArtist("<%= artists.name %>")'>
+                <div class="card">
+                  <img class="card-img-top cardimage" src="<%= artists.image %>" alt="Card image cap">
+                  <div class="card-block">
+                    <h4 class="card-title" style="margin-left: 4px; font-weight: bold;"> <%= artists.name %></h4>
+                     
+                    <h6 style="margin-left: 4px;">From <%= artists.starttime %> - <%= artists.endtime%></h6>
+                  </div>
+                 
+                </div>
+                </button>
+                 
+            </td>
+           
+        </tr>
+        <% }); %>
+</table>
+</div>
+
+
+<script type = 'text/javascript'>
+    var lineup = [];
+    moment().format();
+    
+    $("#search").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($("#table tbody tr"), function() {
+            if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+               $(this).hide();
+            else
+               $(this).show();                
+        });
+    }); 
+
+
+function addArtist(str){
+    lineup.push(str);
+    var tr = '<li class="list-group-item">' + str + '</li>';
+    div = document.getElementById( 'art' );
+    div.insertAdjacentHTML( 'afterend', tr );
+}
+
+function getLineUp(){
+    return lineup;
+}
+
+ $("#prepare").click(function() {
+     
+        for(var i = 0; i < lineup.length; i++) {
+            console.log(lineup[i]);
+            $('#postform').append('<input name = "lineup'+i+'" value= "'+lineup[i]+'" type = "hidden" id ="postid">');
+        }
+        document.getElementById("postid").setAttribute("value", postid);
+       console.log(lineup);
+ });
+
+
+function showSubmit(){
+    document.getElementById("submitter").style.display = "block";
+}
+</script>
+
+<% include partials/footer %>

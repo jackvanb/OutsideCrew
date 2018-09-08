@@ -1,0 +1,106 @@
+<% include partials/header %>
+   <% if(isAuthenticated == false) { %>
+    <div id="home" class="home">
+        <img src="http://i1028.photobucket.com/albums/y342/nickkt2/outsidecrew_zpshknlilnp.png" id = "frontlog2" alt="Outside Crew" class="logo center-block">
+        <button type="button" class="btn btn-primary btn-lg signup" data-toggle="modal" data-target="#register">
+          Sign Up
+        </button>
+        <button type="button" class="btn btn-primary btn-lg signup" data-toggle="modal" data-target="#login">
+          Log In
+        </button>
+    </div>
+  <% } else { %>
+    <div id="home" class="home">
+        <img src="http://i1028.photobucket.com/albums/y342/nickkt2/outsidecrew_zpshknlilnp.png" id = "frontlog" alt="Outside Crew" class="logo center-block">
+        <a type="button" href = "/dashboard" class="btn btn-primary btn-lg signup">
+          Dashboard
+        </a>
+        <a type="button" href ="/myartists" class="btn btn-primary btn-lg signup">
+          My Lineup
+        </a>
+        <a style = type="button" href = "/logout" class="btn btn-primary btn-lg signup">
+          Log Out
+        </a>
+        <a style = type="button" href = "#" class="btn btn-primary btn-lg signup">
+          More
+        </a>
+    </div>
+  <%  }  %>
+        <div class="modal fade" id = "register" tabindex="-1" role="dialog">
+        <form method="POST" action="/register">
+        <fieldset>
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Register</h4>
+              </div>
+              <div class="modal-body">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input title="Enter your username" type="text" required pattern="\w+" name="username" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input title="Password must contain at least 6 characters, including UPPER/lowercase and numbers" type="password" class="form-control" name="password" onchange="
+                              this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+                              if(this.checkValidity()) form.pwd2.pattern = this.value;">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input title="Please enter the same Password as above" type="password"  class="form-control" name="pwd2" onchange="
+                              this.setCustomValidity(this.validity.patternMismatch ? this.title : '');">
+                        </div>
+                    
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-primary" value = "Sign Up">
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+          </fieldset>
+        </form>
+        </div><!-- /.modal -->
+    </div>
+    
+    <div class="modal fade" id = "login" tabindex="-1" role="dialog">
+        <form action = "/login" method = "POST">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Log In</h4>
+              </div>
+              <div class="modal-body">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input class="form-control" type = "text" name = "username">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input class="form-control" type = "password" name = "password">
+                    </div>    
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-primary" value = "Log In">
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </form>
+        </div><!-- /.modal -->
+    </div>
+
+<script>
+    $('#register').on('shown.bs.modal', function () {
+      $('#myInput').focus()
+    });
+    
+    $('#register').on('shown.bs.modal', function () {
+      $('#myInput').focus()
+    });
+</script>
+<% include partials/footer %>

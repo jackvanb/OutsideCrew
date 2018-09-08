@@ -1,0 +1,16 @@
+<% include partials/header %>
+    <div class="home">
+        <h3 class="center-text"><%= group.name %></h3>
+        <a type="button" href="/schedule" class = "btn btn-primary signup">Crew Schedule</a>
+        <a type = "button" href = "/myschedule" class = "btn btn-primary signup">My Picks</a>
+    </div> 
+    <h3 class="center-text">Group Members</h3>
+    <ul class="list-group">
+        <% group.users.forEach(function(user){ %>
+                <li class="list-group-item"><%= user.username %></li>
+        <% }); %>
+    </ul>
+        
+    
+
+<% include partials/footer %>

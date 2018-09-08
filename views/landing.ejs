@@ -1,0 +1,71 @@
+<% include partials/header %>
+<div id="home" class="home">
+    <button class = "btn btn-primary signup" data-toggle="modal" data-target="#create">Create Crew</button>
+    <button class = "btn btn-primary signup"  data-toggle="modal" data-target="#join">Join Crew</button>
+</div>
+
+    <div class="modal fade" id = "create" tabindex="-1" role="dialog">
+        <form action = "/creategroup" method = "POST">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Create a Crew</h4>
+              </div>
+              <div class="modal-body">
+                    <div class="form-group">
+                        <label>Crew Name</label>
+                        <input class="form-control" type = "text" name = "groupname">
+                    </div>
+                    <div class="form-group">
+                        <label>Crew Password</label>
+                        <input class="form-control" type = "text" name = "password">
+                    </div>    
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input id = "createsubmit" type="submit" class="btn btn-primary" value = "Create Crew">
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </form>
+        </div><!-- /.modal -->
+        
+        <div class="modal fade" id = "join" tabindex="-1" role="dialog">
+        <form action = "/joingroup" method = "POST">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Join Crew</h4>
+              </div>
+              <div class="modal-body">
+                    <div class="form-group">
+                        <label>Group Name</label>
+                        <input class="form-control" type = "text" name = "groupname2">
+                    </div>
+                    <div class="form-group">
+                        <label>Group Password</label>
+                        <input class="form-control" type = "text" name = "password2">
+                    </div>    
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input id = "joinsubmit" type="submit" class="btn btn-primary" value = "Join Crew">
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </form>
+        </div><!-- /.modal -->
+  <script>
+    $("#joinsubmit").submit(function() {
+      window.location.replace("https://outside-mustafaqazi916.c9users.io/blastoff2");
+    });
+     $("#createsubmit").submit(function() {
+      window.location.replace("https://outside-mustafaqazi916.c9users.io/blastoff2");
+    });
+  </script>
+  
+<% include partials/footer %>

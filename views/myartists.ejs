@@ -1,0 +1,18 @@
+<% include partials/header %>
+    <div class="home">
+        <h3 style="text-align: center; font-weight: bold;">My Artists</h3>
+    </div>  
+  <div class = "date1">
+  </div>    
+    <% artists.forEach(function(artists){ %>
+        <div class="card">
+          <img class="card-img-top cardimage" src="<%= artists.image %>" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title" style="margin-left: 4px; font-weight: bold;"><%= artists.name %></h4>
+            <h6 style="margin-left: 4px;">Start Time: <%= artists.starttime %></h6>
+            <h6 style="margin-left: 4px;">End Time: <%= artists.endtime %></h6>
+          </div>
+        </div>
+    <% }); %>
+    
+<% include partials/footer %>

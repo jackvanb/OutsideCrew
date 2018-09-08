@@ -1,0 +1,181 @@
+body{
+    background-color: #ffcc88;
+}
+
+.backgrounds{
+    background: url(http://i1028.photobucket.com/albums/y342/nickkt2/landing_zpssa1pxhgw.png) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+}
+
+.logoMenu{
+    height:100%;
+    width:relative;
+}
+
+.drop {
+    font-weight: bold;
+}
+
+.logo{
+    width:300px;
+    height:relative;
+    padding-top:50px;
+    padding-bottom: 25px;
+}
+
+.navbar-default{
+    background-color: #66cccc;
+    border-color: #66cccc;
+    color: #66cccc;
+}
+
+.yourlist{
+    margin:5px;
+    width:100%;
+    height:100%;
+}
+
+.ham{
+    /*margin-left:5px;*/
+    border: 0px;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #66cccc;
+    border-color: #66cccc;
+}
+
+.navbar-default .navbar-toggle {
+    background-color: #66cccc;
+    border-color: #66cccc;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #66cccc;
+    border: 0px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ff8855;
+}
+
+.brand {
+    position: absolute;
+    left: 36%;
+    margin-left: -50px !important;  /* 50% of your logo width */
+    display: block;
+    padding-bottom: 10px;
+}
+
+.home{
+    margin-top: 85px;
+}
+
+.drop{
+    color:#ff8855;
+}
+
+.signup{
+    display: block;
+    width: 80%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signup2{
+    display: block;
+    width: 50%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.circle {
+	background: #66cccc;
+	border-radius:50%;
+	color: white;
+	display:table;
+	height: 45px;
+	font-weight: bold;
+	font-size: 1.2em;
+	width: 45px;
+}
+
+.circle span {
+	display:table-cell;
+	vertical-align:middle;
+	height:45px;
+	width:45px;
+	text-align:center;
+	padding: 0 15px;
+}
+
+.cardimage {
+    max-width:100%;
+    max-height:100%;
+}
+
+.card {
+    border-radius: 0px;
+    border: 0px solid #ddd;
+    margin-bottom: 10px;
+    background-color: #66cccc;
+    color: white;
+    padding-bottom: 10px;
+}
+
+
+.card-block {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+.btn-primary{
+    background-color:#ff8855;
+    border-color:#ff8855;
+    color: white;
+}
+
+h3{
+    color:#ff8855;
+}
+
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+.list-group-item {
+    background-color: #66cccc;
+    border-color: #66cccc;
+    color: white;
+    
+}
+
+table {
+    background-color: #66cccc;
+    color: white;
+    border-color: #66cccc;
+    
+}
+
+#frontlog {
+    padding-right: 15px;
+}
+
+
+#frontlog2 {
+    padding-right: 15px;
+}
